@@ -14,14 +14,14 @@ error_log('facebook hook ');
    if ($hub_verify_token === $verify_token) {
      	error_log('challenge '.$challenge);
    }
- error_log('REQUEST '.$_REQUEST);
-   $input = json_decode(file_get_contents('php://input'), true);
-  error_log('input  '. $input );
-   $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
-  error_log('sender  '. $sender );
-   $message = $input['entry'][0]['messaging'][0]['message']['text'];
-  error_log('XXXXXmessage :  '. $message );
- $message = 'test';
+
+$input = json_decode(file_get_contents('php://input'), true);
+error_log('input '.$input);
+$sender = $input['entry'][0]['messaging'][0]['sender']['id'];
+error_log('sender '.$sender);
+$message = $input['entry'][0]['messaging'][0]['message']['text'];
+error_log('message '.$message);
+
  $cxpUrl = 'http://58.82.133.74:8070/VoxeoCXP/DialogMapping?VSN=testService@System&message='.$message.'&vsDriver=164&channel=facebookrvp&sessionID=EAABvD2ZBmpBkBAOhgmbcNhW024y';
  					
  	error_log($cxpUrl);
