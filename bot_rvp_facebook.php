@@ -34,6 +34,7 @@ error_log('message '.$message);
  	curl_close($chcxp);
  	error_log('cxp '.$chcxp);
  
+
  	//API Url
  	$url = 'https://graph.facebook.com/v2.6/me/messages';
  	$message_to_reply = $xcpResult;
